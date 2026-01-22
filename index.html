@@ -593,6 +593,88 @@
             background: #f3f4f6;
         }
 
+        /* Shop Section */
+        .shop {
+            background: white;
+        }
+
+        .shop-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .shop-item {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .shop-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border-color: #6366f1;
+        }
+
+        .shop-item-image {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+            opacity: 0.8;
+        }
+
+        .shop-item-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .shop-item-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #6366f1;
+            margin-bottom: 1rem;
+        }
+
+        .coming-soon-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #6366f1;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .shop-item-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #e5e7eb;
+            color: #6b7280;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+
         /* Contact Section */
         .contact {
             background: #f9fafb;
@@ -1140,6 +1222,10 @@
                 max-width: 120px;
                 margin: 0 auto;
             }
+
+            .shop-container {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -1156,6 +1242,7 @@
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#shop">Shop</a></li>
                 <li><a href="#app-services">App Services</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -1270,6 +1357,48 @@
         <div class="app-services-content">
             <p>I also offer professional Android app development services. I can help bring your Android app idea to life.</p>
             <a href="https://wa.me/60128904221" target="_blank" class="app-button">Contact for App Services</a>
+        </div>
+    </section>
+
+    <!-- Shop Section -->
+    <section class="shop" id="shop">
+        <h2 class="section-title">Shop</h2>
+        <div class="shop-container">
+            <!-- Shop Item 1 -->
+            <div class="shop-item">
+                <div class="coming-soon-badge">Coming Soon</div>
+                <div class="shop-item-image">📦</div>
+                <div class="shop-item-name">Product Name</div>
+                <div class="shop-item-price">RM 0.00</div>
+                <a href="#" class="shop-item-button">Coming Soon</a>
+            </div>
+
+            <!-- Shop Item 2 -->
+            <div class="shop-item">
+                <div class="coming-soon-badge">Coming Soon</div>
+                <div class="shop-item-image">📦</div>
+                <div class="shop-item-name">Product Name</div>
+                <div class="shop-item-price">RM 0.00</div>
+                <a href="#" class="shop-item-button">Coming Soon</a>
+            </div>
+
+            <!-- Shop Item 3 -->
+            <div class="shop-item">
+                <div class="coming-soon-badge">Coming Soon</div>
+                <div class="shop-item-image">📦</div>
+                <div class="shop-item-name">Product Name</div>
+                <div class="shop-item-price">RM 0.00</div>
+                <a href="#" class="shop-item-button">Coming Soon</a>
+            </div>
+
+            <!-- Shop Item 4 -->
+            <div class="shop-item">
+                <div class="coming-soon-badge">Coming Soon</div>
+                <div class="shop-item-image">📦</div>
+                <div class="shop-item-name">Product Name</div>
+                <div class="shop-item-price">RM 0.00</div>
+                <a href="#" class="shop-item-button">Coming Soon</a>
+            </div>
         </div>
     </section>
 
