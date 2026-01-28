@@ -614,6 +614,7 @@
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
             position: relative;
+            cursor: pointer;
         }
 
         .template-card:hover {
@@ -665,6 +666,60 @@
         .template-card-button:hover {
             background: #4f46e5;
             transform: translateY(-2px);
+        }
+
+        /* Template view modal */
+        .template-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+
+        .template-modal.active {
+            display: flex;
+        }
+
+        .template-modal-inner {
+            position: relative;
+            max-width: 90vw;
+            max-height: 90vh;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0,0,0,0.5);
+        }
+
+        .template-modal-inner video {
+            width: 100%;
+            height: auto;
+            max-height: 85vh;
+            display: block;
+        }
+
+        .template-modal-close {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: rgba(255,255,255,0.9);
+            color: #333;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            line-height: 1;
+            z-index: 1;
+            transition: background 0.2s;
+        }
+
+        .template-modal-close:hover {
+            background: white;
         }
 
         /* Shop Section */
@@ -1545,6 +1600,17 @@
         <p>&copy; 2026 mvhub. All rights reserved.</p>
     </footer>
 
+    <!-- Template view modal -->
+    <div class="template-modal" id="templateModal">
+        <div class="template-modal-inner">
+            <button class="template-modal-close" id="templateModalClose" aria-label="Close">&times;</button>
+            <video id="templateModalVideo" muted loop playsinline controls>
+                <source src="v.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div>
+    </div>
+
     <script>
         // Burger menu toggle
         const menuToggle = document.getElementById('menuToggle');
@@ -1570,6 +1636,34 @@
                 menuToggle.classList.remove('active');
                 navLinks.classList.remove('active');
             }
+        });
+
+        // Template card: click to view (open modal); "Get Template" button still goes to WhatsApp
+        const templateModal = document.getElementById('templateModal');
+        const templateModalClose = document.getElementById('templateModalClose');
+        const templateModalVideo = document.getElementById('templateModalVideo');
+
+        document.querySelectorAll('.template-card').forEach(card => {
+            card.addEventListener('click', function(e) {
+                if (e.target.closest('a.template-card-button')) return;
+                templateModal.classList.add('active');
+                templateModalVideo.currentTime = 0;
+                templateModalVideo.play();
+            });
+        });
+
+        function closeTemplateModal() {
+            templateModal.classList.remove('active');
+            templateModalVideo.pause();
+        }
+
+        templateModalClose.addEventListener('click', closeTemplateModal);
+        templateModal.addEventListener('click', function(e) {
+            if (e.target === templateModal) closeTemplateModal();
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && templateModal.classList.contains('active')) closeTemplateModal();
         });
 
         // Smooth scrolling for navigation links
