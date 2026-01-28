@@ -600,7 +600,7 @@
 
         .template-container {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 2rem;
             margin-top: 3rem;
         }
@@ -609,41 +609,46 @@
             background: white;
             border: 2px solid #e5e7eb;
             border-radius: 15px;
+            padding: 1.5rem;
+            text-align: center;
             overflow: hidden;
             transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
         }
 
         .template-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             border-color: #6366f1;
         }
 
         .template-card-video {
             width: 100%;
-            height: 200px;
+            height: 140px;
             object-fit: cover;
             display: block;
             background: #000;
+            border-radius: 10px;
+            margin-bottom: 0.75rem;
         }
 
         .template-card-body {
-            padding: 1.25rem;
+            padding: 0;
             text-align: center;
         }
 
         .template-card-name {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: bold;
             color: #1f2937;
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.25rem;
         }
 
         .template-card-price {
             font-size: 1.5rem;
             font-weight: bold;
             color: #6366f1;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
         }
 
         .template-card-button {
@@ -1377,7 +1382,7 @@
                     Your browser does not support the video tag.
                 </video>
                 <div class="template-card-body">
-                    <div class="template-card-name">Valentine</div>
+                    <div class="template-card-name">Valentine Template</div>
                     <div class="template-card-price">RM 6.70</div>
                     <a href="https://wa.me/60128904221" target="_blank" class="template-card-button">Get Template</a>
                 </div>
