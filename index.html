@@ -593,6 +593,75 @@
             background: #f3f4f6;
         }
 
+        /* Website Template Section */
+        .website-templates {
+            background: #f9fafb;
+        }
+
+        .template-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .template-card {
+            background: white;
+            border: 2px solid #e5e7eb;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .template-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            border-color: #6366f1;
+        }
+
+        .template-card-video {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+            background: #000;
+        }
+
+        .template-card-body {
+            padding: 1.25rem;
+            text-align: center;
+        }
+
+        .template-card-name {
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: #1f2937;
+            margin-bottom: 0.5rem;
+        }
+
+        .template-card-price {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #6366f1;
+            margin-bottom: 1rem;
+        }
+
+        .template-card-button {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            background: #6366f1;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .template-card-button:hover {
+            background: #4f46e5;
+            transform: translateY(-2px);
+        }
+
         /* Shop Section */
         .shop {
             background: white;
@@ -1241,6 +1310,7 @@
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Home</a></li>
+                <li><a href="#templates">Templates</a></li>
                 <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#shop">Shop</a></li>
                 <li><a href="#app-services">App Services</a></li>
@@ -1294,6 +1364,24 @@
                 <source src="PERO.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
+        </div>
+    </section>
+
+    <!-- Website Template Section -->
+    <section class="website-templates" id="templates">
+        <h2 class="section-title">Website Templates</h2>
+        <div class="template-container">
+            <div class="template-card">
+                <video class="template-card-video" autoplay muted loop playsinline>
+                    <source src="v.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="template-card-body">
+                    <div class="template-card-name">Valentine</div>
+                    <div class="template-card-price">RM 6.70</div>
+                    <a href="https://wa.me/60128904221" target="_blank" class="template-card-button">Get Template</a>
+                </div>
+            </div>
         </div>
     </section>
 
